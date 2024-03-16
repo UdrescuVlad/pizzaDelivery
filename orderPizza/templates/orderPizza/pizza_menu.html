@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+    <div class="list-group list-group-radio d-grid gap-2 border-0">
+        <h2 style="padding: 10; margin: 10;">Joshua Pizza Menu</h2>
+        <div class="list-group">
+            {% for pizza in pizzas %}
+            <div class="position-relative">
+                <a href="{% url 'pizza.detail' pk=pizza.id %}">
+                    <label class="list-group-item py-3 pe-5" for="listGroupRadioGrid">
+                        <strong class="fw-semibold">{{pizza.name}}</strong>
+                        <span class="d-block small opacity-75">
+                            {{pizza.description}}
+                        </span>
+                    </label>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

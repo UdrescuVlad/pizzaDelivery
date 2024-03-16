@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="p-5 mb-4 bg-body-tertiary rounded-3">
   <div class="container-fluid py-5">
     <h1 class="display-5 fw-bold">
@@ -12,7 +13,8 @@
       et malesuada fames ac turpis egestas. Sed non facilisis quam. Ut rhoncus vitae ligula et.
     </p>
     <br>
-    <button class="btn btn-primary btn-lg" type="button">Menu</button>
+    <a href="{% url 'pizza.menu' %}" class="btn btn-outline-warning btn-lg" type="button" style="padding: 10; margin: 10;">Joshua Pizza Menu</a>
+    <a href="{% url 'daily.menu' %}" class="btn btn-outline-danger btn-lg" type="button" style="padding: 10; margin: 10;">Joshua Daily Menu</a>
   </div>
 </div>
 

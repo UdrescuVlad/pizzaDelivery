@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+    <div class="list-group list-group-radio d-grid gap-2 border-0">
+        <h2 style="padding: 10; margin: 10;">{{ pizza.name }}</h2>
+        <h4>Description:</h4><p>{{pizza.description}}</p>
+        <h4>Price:</h4><p>{{pizza.price}}</p>
+        <h4>BONUS:</h4><p>{{pizza.bonus}}</p>
+    </div>
+</div>
+
+{% endblock %}
