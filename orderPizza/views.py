@@ -17,6 +17,13 @@ class DetailedViewPizza(DetailView):
     context_object_name = 'pizza'
     def get_object(self):
         return Pizza.objects.get(pk=self.kwargs['pk'])
+    
+class FilterPizzaMenu(ListView):
+    model = Pizza
+    context_object_name = 'pizzas'
+    template_name = 'orderPizza/pizza_menu.html'
+    def get_queryset(self) -> QuerySet[Any]:
+        return Pizza.objects.filter(pizza_type=self.kwargs['pizzatype'])
 
 class ViewDailyMenu(ListView):
     model = DailyMenu

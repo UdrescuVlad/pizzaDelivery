@@ -21,6 +21,7 @@ from orderPizza.views import *
 urlpatterns = [
     path('pizza/', ViewPizzaMenu.as_view(), name="pizza.menu"),
     path('pizza/<int:pk>/', DetailedViewPizza.as_view(), name="pizza.detail"),
+    path('pizza/filter/<str:pizzatype>/', FilterPizzaMenu.as_view(), name='pizza.filter'),
     path('daily/', ViewDailyMenu.as_view(), name="daily.menu"),
     path('daily/<int:pk>/', DetailedViewDailyMenu.as_view(), name='daily.menu.detail'),
 ]
