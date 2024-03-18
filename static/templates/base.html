@@ -35,14 +35,15 @@
             </div>
             <ul class="nav col-12 justify-content-center mb-md-0">
                 <li>
-                    <div class="btn btn-light rounded-pill px-3 dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                    <div class="dropdown">
+                        <button class="btn btn-light rounded-pill px-3 dropdown-item" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Pizza
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="btn btn-light rounded-pill px-3 dropdown-item" href="{% url 'pizza.filter' pizzatype='Joshua' %}">Joshua Pizza</a></li>
-                            <li><a class="dropdown-item" href="{% url 'pizza.filter' pizzatype='Happy' %}">Happy Pizza</a></li>
+                            <li><a class="btn btn-light rounded-pill px-3 dropdown-item"
+                                    href="{% url 'pizza.filter' pizzatype='Joshua' %}">Joshua Pizza</a></li>
+                            <li><a class="btn btn-light rounded-pill px-3 dropdown-item"
+                                    href="{% url 'pizza.filter' pizzatype='Happy' %}">Happy Pizza</a></li>
                         </ul>
                     </div>
                 </li>
