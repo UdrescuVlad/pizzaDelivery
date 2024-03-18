@@ -35,26 +35,26 @@
             </div>
             <ul class="nav col-12 justify-content-center mb-md-0">
                 <li>
-                    <div class="dropdown">
-                        <button class="btn btn-light rounded-pill px-3 dropdown-item" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="dropdown" style="padding: 10; margin: 10;">
+                        <button class="dropdown-item" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Pizza
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="btn btn-light rounded-pill px-3 dropdown-item"
+                            <li><a class="dropdown-item"
                                     href="{% url 'pizza.filter' pizzatype='Joshua' %}">Joshua Pizza</a></li>
-                            <li><a class="btn btn-light rounded-pill px-3 dropdown-item"
+                            <li><a class="dropdown-item"
                                     href="{% url 'pizza.filter' pizzatype='Happy' %}">Happy Pizza</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="{% url 'homepage' %}" class="btn btn-light rounded-pill px-3" type="button"
+                <li><a href="{% url 'homepage' %}" class="btn btn-light rounded-pill" type="button"
                         style="padding: 10; margin: 10;">Homepage</a></li>
-                <li><a href="{% url 'daily.menu' %}" class="btn btn-light rounded-pill px-3" type="button"
+                <li><a href="{% url 'daily.menu' %}" class="btn btn-light rounded-pill" type="button"
                         style="padding: 10; margin: 10;">Joshua Daily Menu</a></li>
-                <li><a href="{% url 'pizza.menu' %}" class="btn btn-light rounded-pill px-3" type="button"
+                <li><a href="{% url 'pizza.menu' %}" class="btn btn-light rounded-pill" type="button"
                         style="padding: 10; margin: 10;">Joshua Pizza Menu</a></li>
-                <button type="button" class="btn btn-outline-warning me-2">Login</button>
-                <button type="button" class="btn btn-warning">Sign-up</button>
+                <button type="button" class="btn btn-outline-warning rounded-pill me-2">Login</button>
+                <button type="button" class="btn btn-warning rounded-pill">Sign-up</button>
             </ul>
         </header>
         {% endif %}
