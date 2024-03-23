@@ -14,7 +14,7 @@ class ViewPizzaMenu(ListView):
     model = Pizza
     context_object_name = 'pizzas'
     template_name = 'orderPizza/pizza_menu.html'
-    def get_queryset(self) -> QuerySet[any]:
+    def get_queryset(self) -> QuerySet[any]                                       :
         return Pizza.objects.all()
 
 class DetailedViewPizza(DetailView):
