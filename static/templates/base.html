@@ -28,9 +28,7 @@
         {% if request.resolver_match.url_name == 'homepage' and user.is_authenticated %}
         <header
             class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <div class="nav col-12 justify-content-end mb-md-0">
-                Hello {{user.username}}
-            </div>
+            <div class="nav col-12 justify-content-end mb-md-0">Hello {{user.username}}</div>
         </header>
         {% endif %}
         {% if request.resolver_match.url_name != 'homepage' %}
