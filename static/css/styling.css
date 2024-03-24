@@ -1,0 +1,75 @@
+.text-decoration-none:not(:hover) {
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+    font-family: 'Roboto', sans-serif;
+}
+
+.pizza-details-container {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: 50px;
+}
+
+.pizza-details-title {
+    color: #333;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.pizza-details-info {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.pizza-details-info p {
+    margin-bottom: 10px;
+}
+
+.pizza-details-info h4 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.pizza-details-info .price {
+    color: #0080ff;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.pizza-details-info .bonus {
+    color: #00cc66;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-order {
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    /* Remove default outline */
+}
+
+.btn-order:hover {
+    background-color: #ffdd33;
+}
+
+.btn-order:active {
+    transform: translateY(2px);
+    /* Add a slight downward movement when clicked */
+}

@@ -3,12 +3,23 @@
 {% block content %}
 
 <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
-    <div class="list-group list-group-radio d-grid gap-2 border-0">
-        <h2 style="padding: 10; margin: 10;">Day of the week this menu is served: {{dailyMenu.day}}</h2>
-        <h4>First course:</h4><p>{{dailyMenu.first_course}}</p>
-        <h4>Second course:</h4><p>{{dailyMenu.second_course}}</p>
-        <h4>Drinks:</h4><p>{{dailyMenu.drink}}</p>
-        <h4>Price:</h4><p>{{dailyMenu.price}}</p>
+    <div class="row justify-content-center">
+        <div class="list-group list-group-radio d-grid gap-2 border-0">
+            <div class="pizza-details-container">
+                <h2 class="pizza-details-title">Day of the week this menu is served: {{dailyMenu.day}}</h2>
+                <div class="pizza-details-info">
+                    <p>{{dailyMenu.first_course}}</p>
+                    <p>{{dailyMenu.second_course}}</p>
+                    <h4>Price:</h4>
+                    <p class="price">{{dailyMenu.price}}</p>
+                    {% if dailyMenu.drink %}
+                    <h4>Drink:</h4>
+                    <p class="bonus">{{ dailyMenu.drink }}</p>
+                    {% endif %}
+                </div>
+                <button class="btn btn-order" onclick="orderPizza()">Order Now</button>
+            </div>
+        </div>
     </div>
 </div>
 
