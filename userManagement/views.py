@@ -1,16 +1,16 @@
-from typing import Any
 from django.contrib.auth.views import LoginView, LogoutView
 from django.http import HttpResponseRedirect
-from django.shortcuts import redirect
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class Login(LoginView):
     template_name = 'userManagement/customLoginTemplate.html'
     def dispatch(self, request, *args, **kwargs):
-        context = self.get_context_data(**kwargs)
         if self.request.user.is_authenticated:
-            return HttpResponseRedirect(reverse_lazy('homepage'), context)
+            return HttpResponseRedirect(reverse_lazy('homepage'))
         return super().dispatch(request, *args, **kwargs)
         
-class Logout(LogoutView):
+class Logout(LoginRequiredMixin, LogoutView):
+    login_url = '/user/login/'
+    redirect_field_name = "redirect_to"
     template_name = 'userManagement/customLogoutTemplate.html'
