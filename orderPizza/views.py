@@ -1,14 +1,9 @@
-from typing import Any
 from django.db.models.base import Model as Model
-from django.http import Http404, HttpResponseNotFound, HttpResponseRedirect
-from django.shortcuts import redirect, render
-from django.urls import reverse_lazy
+from django.http import Http404, HttpResponseNotFound
 from .models import *
 from django.db.models.query import QuerySet
 from django.views.generic import ListView, DetailView
 from django.template.loader import render_to_string
-from django.shortcuts import get_object_or_404
-# Create your views here.
 
 PIZZA_TYPE = ['Joshua', 'Happy']
 
@@ -39,14 +34,14 @@ class FilterPizzaMenu(ListView):
             return HttpResponseNotFound(rendered_template)
         else:
             return super().get(request, *args, **kwargs)
-    def get_queryset(self) -> QuerySet[Any]:
+    def get_queryset(self):
         return Pizza.objects.filter(pizza_type=self.kwargs['pizzatype'])
 
 class ViewDailyMenu(ListView):
     model = DailyMenu
     context_object_name = 'menu'
     template_name = 'orderPizza/daily_menu.html'
-    def get_queryset(self) -> QuerySet[any]:
+    def get_queryset(self):
         return DailyMenu.objects.all()
     
 class DetailedViewDailyMenu(DetailView):
@@ -56,5 +51,5 @@ class DetailedViewDailyMenu(DetailView):
         try:
             return super().get(request, *args, **kwargs)
         except Http404:
-            rendered_template = render_to_string('orderPizza/404.html', {'error_message': 'This daily meny is not valid'})
+            rendered_template = render_to_string('orderPizza/404.html', {'error_message': 'This daily menu is not valid'})
             return HttpResponseNotFound(rendered_template)

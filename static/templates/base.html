@@ -34,11 +34,11 @@
         {% if request.resolver_match.url_name != 'homepage' %}
         <header class="navbar navbar-expand-md">
             <div class="col-md-3 mb-2 mb-md-0">
-                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                <a href="{% url 'homepage' %}" class="d-inline-flex link-body-emphasis text-decoration-none">
                     <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
                         <use xlink:href="#bootstrap"></use>
                     </svg>
-                </a>
+                <h3>Joshua Pizza</h3></a>
             </div>
             <div class="container">
                 <div class="collapse navbar-collapse justify-content-md-end" id="navbarNav">
