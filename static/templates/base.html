@@ -33,12 +33,21 @@
         {% endif %}
         {% if request.resolver_match.url_name != 'homepage' %}
         <header class="navbar navbar-expand-md">
-            <div class="col-md-3 mb-2 mb-md-0">
-                <a href="{% url 'homepage' %}" class="d-inline-flex link-body-emphasis text-decoration-none">
-                    <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                <h3>Joshua Pizza</h3></a>
+            <div class="row">
+                <div class="col-md-8">
+                    <a href="{% url 'homepage' %}" class="d-inline-flex link-body-emphasis text-decoration-none">
+                        <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg>
+                        <h3>Joshua Pizza</h3>
+                    </a>
+                </div>
+                <div class="col-md-4 d-flex align-items-center">
+                    <form id="search-form" role="search" method="GET" action="{% url 'search_url' %}">
+                        <input id="search-input" type="search" class="form-control me-2" placeholder="Search..."
+                            aria-label="Search" name="search">
+                    </form>
+                </div>
             </div>
             <div class="container">
                 <div class="collapse navbar-collapse justify-content-md-end" id="navbarNav">
@@ -111,6 +120,14 @@
         function orderPizza() {
             alert("Your pizza/s has been added to the shopping cart!"); // Replace with actual order functionality
         }
+    </script>
+    <script>
+        document.getElementById("search-form").addEventListener("submit", function (event) {
+            var searchInput = document.getElementById("search-input");
+            if (searchInput.value.trim() === "") {
+                event.preventDefault();
+            }
+        });
     </script>
 </body>
 

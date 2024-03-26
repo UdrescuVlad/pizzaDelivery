@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class = "p-5 mb-4 rounded-3">
+    {% for el in list %}
+        <div>
+            {{el}}
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

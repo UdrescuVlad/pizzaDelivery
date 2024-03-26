@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
@@ -16,7 +15,7 @@ class Pizza(models.Model):
     pizza_type = models.CharField(max_length=6, choices=PIZZA_TYPE, default='Happy')
 
     def __str__(self) -> str:
-        return self.name+'$'+self.price
+        return f"{self.name} ${str(self.price)}"
 
 class DailyMenu(models.Model):
     class DayOfWeek(models.TextChoices):
@@ -35,4 +34,4 @@ class DailyMenu(models.Model):
     day = models.CharField(max_length=9, choices=DayOfWeek.choices, default=DayOfWeek.MO)
 
     def __str__(self) -> str:
-        return self.day+'_'+self.first_course+'_'+self.second_course
+        return f"Daily menu - {self.day} that has {self.first_course} and {self.second_course} at only {self.price}"
