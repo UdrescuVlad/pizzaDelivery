@@ -9,7 +9,7 @@ from django.http import HttpRequest, HttpResponseForbidden, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from userManagement.models import Profile
+from userManagement.models import UserProfile
 
 class Login(LoginView):
     template_name = 'userManagement/customLoginTemplate.html'
@@ -36,10 +36,12 @@ class Register(CreateView):
 # class ChangePassword
 
 class ViewProfile(LoginRequiredMixin, DetailView):
-    model = Profile
+    login_url = '/user/login/'
+    redirect_field_name = "redirect_to"
+    model = UserProfile
     template_name = 'userManagement/profileTemplate.html'
     context_object_name = 'profile'
     
     def get_object(self):
         current_user = self.request.user
-        return Profile.objects.get(user=current_user)
+        return UserProfile.objects.get(user=current_user)

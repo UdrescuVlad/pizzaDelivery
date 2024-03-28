@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Profile
+from .models import UserProfile
 
-@admin.register(Profile)  # Register your model with the admin site
+@admin.register(UserProfile)  # Register your model with the admin site
 class ProfileAdmin(admin.ModelAdmin):
     pass  # Use the default admin interface
