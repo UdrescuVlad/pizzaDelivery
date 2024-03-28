@@ -1,10 +1,15 @@
 from django.contrib.auth.views import LoginView, LogoutView
+from django.db.models.base import Model as Model
+from django.db.models.query import QuerySet
 from django.http.response import HttpResponse as HttpResponse
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView, UpdateView
 from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpRequest, HttpResponseRedirect
+from django.http import HttpRequest, HttpResponseForbidden, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from userManagement.models import Profile
 
 class Login(LoginView):
     template_name = 'userManagement/customLoginTemplate.html'
@@ -27,3 +32,14 @@ class Register(CreateView):
         if self.request.user.is_authenticated:
             return HttpResponseRedirect(reverse_lazy('homepage'))
         return super().dispatch(request, *args, **kwargs)
+
+# class ChangePassword
+
+class ViewProfile(LoginRequiredMixin, DetailView):
+    model = Profile
+    template_name = 'userManagement/profileTemplate.html'
+    context_object_name = 'profile'
+    
+    def get_object(self):
+        current_user = self.request.user
+        return Profile.objects.get(user=current_user)

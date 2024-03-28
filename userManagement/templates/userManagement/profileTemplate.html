@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">User Profile</h5>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <p id="username">
+                            <label for="username">
+                                <b>Username: </b>
+                            </label>
+                            {{ profile.user.username }}
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <p id="bio">
+                            <label for="bio">
+                                <b>Bio: </b>
+                            </label>
+                            {{ profile.bio }}
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <p id="date_created">
+                            <label for="date_created">
+                                <b>Date created: </b>
+                            </label>
+                            {{ profile.date_created }}
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <p id="date_modified">
+                            <label for="date_modified">
+                                <b>Date modified: </b>
+                            </label>
+                            {{ profile.date_modified }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
