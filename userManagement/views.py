@@ -35,7 +35,7 @@ class Register(CreateView):
 
 # class ChangePassword
 
-class ViewProfile(LoginRequiredMixin, DetailView):
+class ViewUserProfile(LoginRequiredMixin, DetailView):
     login_url = '/user/login/'
     redirect_field_name = "redirect_to"
     model = UserProfile
@@ -45,3 +45,4 @@ class ViewProfile(LoginRequiredMixin, DetailView):
     def get_object(self):
         current_user = self.request.user
         return UserProfile.objects.get(user=current_user)
+    

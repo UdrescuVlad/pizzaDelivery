@@ -18,6 +18,14 @@
                         </p>
                     </div>
                     <div class="form-group">
+                        <p id="email">
+                            <label for="email">
+                                <b>Email: </b>
+                            </label>
+                            {{ profile.user.email }}
+                        </p>
+                    </div>
+                    <div class="form-group">
                         <p id="bio">
                             <label for="bio">
                                 <b>Bio: </b>
@@ -28,17 +36,17 @@
                     <div class="form-group">
                         <p id="date_created">
                             <label for="date_created">
-                                <b>Date created: </b>
+                                <b>Date joined: </b>
                             </label>
-                            {{ profile.date_created }}
+                            {{ profile.user.date_joined }}
                         </p>
                     </div>
                     <div class="form-group">
                         <p id="date_modified">
                             <label for="date_modified">
-                                <b>Date modified: </b>
+                                <b>Last login: </b>
                             </label>
-                            {{ profile.date_modified }}
+                            {{ profile.user.last_login }}
                         </p>
                     </div>
                 </div>

@@ -1,6 +1,14 @@
 from django.contrib import admin
-from .models import UserProfile
+from .models import *
 
-@admin.register(UserProfile)  # Register your model with the admin site
-class ProfileAdmin(admin.ModelAdmin):
-    pass  # Use the default admin interface
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(BillingProfile)
+class BillingProfileAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(DeliveryAddress)
+class DeliveryAddressAdmin(admin.ModelAdmin):
+    pass
